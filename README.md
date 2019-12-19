@@ -10,6 +10,34 @@ Load modules by `:l module` for module `module.hs`.
 ## Examples
 Lots of examples can be found [here](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples).
 
+### Language Syntax
+#### Input Output
+```
+module Main where
+
+factorial n = if n == 0 then 1 else n * factorial (n - 1)
+
+main = do putStrLn "What is 5! ?"
+          x <- readLn
+          if x == factorial 5
+              then putStrLn "You're right!"
+              else putStrLn "You're wrong!"
+```
+#### Multiple Definitions
+```
+secsToWeeks secs = let perMinute = 60
+                       perHour   = 60 * perMinute
+                       perDay    = 24 * perHour
+                       perWeek   =  7 * perDay
+                   in  secs / perWeek
+```
+#### Case Statement
+```
+classify age = case age of 0 -> "newborn"
+                           1 -> "infant"
+                           2 -> "toddler"
+                           _ -> "senior citizen"
+```
 ### Parallel
 Support for parallel and multicore programming. See file [src/parallel.hs](src/parallel.hs). That program can be compiled and run like the following:
 ```
