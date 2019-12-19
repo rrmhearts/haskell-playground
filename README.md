@@ -11,13 +11,14 @@ Load modules by `:l module` for module `module.hs`.
 Lots of examples can be found [here](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples).
 
 ### Parallel
-Support for parellel and multicore programming. See file [src/parallel]. That program can be compiled and run like the following:
+Support for parallel and multicore programming. See file [src/parallel.hs](src/parallel.hs). That program can be compiled and run like the following:
 ```
 ghc -O2 --make src/parallel.hs -threaded -rtsopts
 
 # Run with time complexity
 time ./parallel +RTS -N2
 ```
+This allows multiple functions to run in parallel on the same machine. Compare time complexity to sequential version.
 ### Qsort Comparison
 **Haskell**
 ```
